@@ -24,7 +24,7 @@ function App() {
     }
   ])
   return (
-    <ThemeProvider storageKey='theme'>
+    <ThemeProvider storageKey="theme">
          <RouterProvider router={router} />
     </ThemeProvider>    
   )

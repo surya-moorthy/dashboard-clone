@@ -1,14 +1,13 @@
 import { ChevronLeftIcon } from "lucide-react"
-import { cn } from "../utils/cn"
 import { Search } from "lucide-react"
-import { useState } from "react"
 import { Sun } from "lucide-react"
 import { Moon } from "lucide-react"
 import { Bell } from "lucide-react"
 import ProfileImg from "../assets/profile-image.png"
+import { useTheme } from "../hooks/theme"
 
 export const Header = ({collapsed,setCollapsed}) => {
-  const [theme, setTheme] = useState("light");
+  const {theme, setTheme} = useTheme();
     return (
         <div className="relative z-10 h-[60px] flex justify-between items-center shadow-md transition-colors dark:bg-slate-900 ">
               <div className="flex items-center gap-x-3">
@@ -36,6 +35,7 @@ export const Header = ({collapsed,setCollapsed}) => {
                   className="btn-ghost size-10"
                   onClick={()=>setTheme(theme === "light" ? "dark" : "light")}
                 >
+                  {console.log(theme)}
                     <Sun
                       size={20}
                       className="dark:hidden"
